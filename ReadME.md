@@ -12,8 +12,11 @@ How to run locally:
 2. Test mobile nav via DevTools.
 
 Changes (Part 3):
-- Fixed mobile nav CSS; moved script.js to js/; removed stray text in projects.html.
-- Added robots.txt and sitemap.xml for SEO.
-- Updated README and added CHANGELOG.
+- Added enquiry and contact forms with client-side validation and mailto fallback.
+- Implemented lightbox markup and JS behavior for project images.
+- Added Leaflet map to contact page (leaflet CDN used).
+- Added AJAX POST attempt for enquiries with graceful fallback for static hosting.
+- SEO: robots.txt and sitemap.xml added.
+- Update CHANGELOG and prepared git commit messages.
 
 Contact: info@lisikaunite.org

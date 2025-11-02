@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Leaflet (map) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
   <header class="lu-header">
@@ -44,26 +48,33 @@
         <p>Phone: +27 15 123 4567 (Mon-Fri, 08:00-16:00 SAST)</p>
         <p>Address: 12 Literacy Lane, Polokwane, Limpopo, 0700, South Africa</p>
 
+        <div id="map" style="height:300px;border-radius:.5rem;overflow:hidden;margin-bottom:1rem;"></div>
+
         <form id="contactForm" onsubmit="return validateContact()">
-          <label for="name">Name:</label>
-          <input type="text" id="name" required minlength="2">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required minlength="2">
 
-          <label for="email">Email:</label>
-          <input type="email" id="email" required>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
 
-          <label for="type">Message Type:</label>
-          <select id="type" required>
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" pattern="^\+?\d{7,15}$" placeholder="+27123456789">
+
+          <label for="type">Message type</label>
+          <select id="type" name="type" required>
             <option value="">Select...</option>
-            <option value="General Inquiry">General Inquiry</option>
-            <option value="Partnership">Partnership</option>
-            <option value="Volunteer">Volunteer</option>
+            <option value="general">General enquiry</option>
+            <option value="donation">Donation</option>
+            <option value="volunteer">Volunteer</option>
+            <option value="media">Media request</option>
           </select>
 
-          <label for="message">Message:</label>
-          <textarea id="message" required minlength="10" maxlength="500"></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required minlength="10"></textarea>
+
+          <div id="contactError" style="display:none;color:#b00020;margin-top:0.5rem;"></div>
 
           <button type="submit" class="cta-button">Send Message</button>
-          <p id="contactError" style="color: red; display: none; margin-top: 0.5rem;"></p>
         </form>
       </div>
     </section>
