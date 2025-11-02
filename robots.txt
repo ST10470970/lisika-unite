@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lisikaunite.org/sitemap.xml
+Host: lisikaunite.org
